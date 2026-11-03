@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌸 Happy Birthday, Bunga Safitriani ❤️
+# 🌸 Happy Birthday ❤️
 ### *Special Romantic Birthday Website — 10 November 2026*
 
 [![Made with Love](https://img.shields.io/badge/Made%20with-Love%20%26%20JavaScript-e45a8d?style=for-the-badge&logo=javascript&logoColor=white)](https://github.com/RobbyAH/BirthdayGF)
@@ -17,7 +17,7 @@
 
 ## ✨ Tentang Proyek Ini
 
-**BirthdayGF** adalah website ucapan ulang tahun interaktif, estetik, dan penuh kata-kata romantis (*bucin*) yang dibuat khusus untuk merayakan hari ulang tahun **Bunga Safitriani** pada tanggal **10 November 2026**.
+**BirthdayGF** adalah website ucapan ulang tahun interaktif, estetik, dan penuh kata-kata romantis (*bucin*) yang dibuat khusus untuk merayakan hari ulang tahun pada tanggal **10 November 2026**.
 
 Dirancang dengan nuansa warna *Soft Rose Gold*, *Blush Pink*, dan *Warm Ivory*, website ini menghadirkan pengalaman membuka kado digital yang hangat, manis, dan berkesan baik di smartphone maupun desktop.
 
@@ -74,23 +74,18 @@ http://localhost/BirthdayGF/
 Seluruh teks, tanggal ulang tahun, daftar foto, dan kata-kata bucin dapat diubah dengan mudah di bagian atas file [`script.js`](./script.js) pada objek `CONFIG`:
 ```javascript
 const CONFIG = {
-  recipientName: "Bunga Safitriani",
-  envelopeRecipient: "Bunga Safitriani ❤️",
-  senderName: "Pacarmu yang Paling Bucin ❤️",
+  recipientName: "Name",
+  envelopeRecipient: "Name ❤️",
+  senderName: "Name ❤️",
   birthdayDateISO: "2026-11-10T00:00:00+07:00",
   // ...
 };
 ```
 
-### 3. Deploy ke Vercel
-Proyek ini sudah dilengkapi `vercel.json` dan siap dideploy secara instan:
-1. Login ke [Vercel](https://vercel.com/).
-2. Klik **Add New Project** dan pilih repository `RobbyAH/BirthdayGF`.
-3. Klik **Deploy** — selesai!
 
 ---
 
 <div align="center">
-  Dibuat dengan sepenuh hati & rasa bucin paling dalam oleh <strong>Robby</strong> untuk <strong>Bunga Safitriani</strong> ❤️<br/>
+  Dibuat dengan sepenuh hati & rasa bucin paling dalam oleh <strong>Robby</strong> untuk <strong>Seseorang</strong> ❤️<br/>
   <sub>Spesial 10 November 2026</sub>
 </div>
