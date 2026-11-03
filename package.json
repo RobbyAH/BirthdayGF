@@ -1,0 +1,10 @@
+{
+  "name": "birthday-gf-10-november-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website Ulang Tahun Romantis - 10 November 2026",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
+

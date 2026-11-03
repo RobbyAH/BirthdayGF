@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Bunga Safitriani ❤️ | 10 November 2026</title>
+  <meta name="description" content="Spesial untuk hari ulang tahun Bunga Safitriani - 10 November 2026" />
+  
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, & Caveat (Handwriting) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Canvas for Floating Hearts & Sparkles -->
+  <canvas id="romantic-canvas"></canvas>
+
+  <!-- Floating Music & Quick Customize Controls -->
+  <div class="floating-controls" id="floating-controls" aria-label="Kontrol Musik dan Efek">
+    <button id="music-toggle" class="control-btn" title="Putar / Jeda Musik Romantis">
+      <span class="music-icon" id="music-icon">🎵</span>
+      <span class="music-label" id="music-label">Musik: ON</span>
+    </button>
+    <button id="heart-shower-btn" class="control-btn icon-only" title="Hujani dengan Cinta">
+      💖
+    </button>
+  </div>
+
+  <!-- Optional audio element if user adds assets/musik.mp3, fallback to Web Audio Piano -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/musik.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- 1. OPENING ENVELOPE OVERLAY -->
+  <div id="envelope-overlay" class="envelope-overlay">
+    <div class="envelope-wrapper">
+      <div class="envelope-badge">✨ Special Edition • 10 November 2026 ✨</div>
+      <div class="envelope-card" id="envelope-card">
+        <div class="wax-seal" id="wax-seal">
+          <span>❤️</span>
+        </div>
+        <p class="envelope-subtitle">Sebuah kejutan kecil untuk</p>
+        <h1 class="envelope-title" id="envelope-recipient">Bunga Safitriani ❤️</h1>
+        <p class="envelope-desc">
+          Hari ini semesta merayakan hadirnya Bunga terindah yang paling berharga di hidupku.
+          Ketuk tombol di bawah untuk membuka surat dan kenangan kita ya, sayang.
+        </p>
+        <button id="open-gift-btn" class="btn-primary pulse-btn">
+          <span>💌 Buka Kejutan Ulang Tahunmu</span>
+        </button>
+        <p class="envelope-hint">🔊 Nyalakan suara HP/Laptop kamu ya sayang</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="main-content hidden">
+    
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow"></div>
+      <div class="container hero-container">
+        <div class="date-pill">
+          <span class="sparkle">✦</span> 10 November 2026 <span class="sparkle">✦</span>
+        </div>
+
+        <h1 class="hero-title">
+          Selamat Ulang Tahun,<br />
+          <span class="gradient-text" id="hero-name">Bunga Safitriani</span>
+        </h1>
+
+        <div class="typewriter-box">
+          <span id="typewriter-text"></span><span class="cursor">|</span>
+        </div>
+
+        <!-- Hero Featured Photo Stack -->
+        <div class="hero-photo-showcase">
+          <div class="photo-card photo-left">
+            <img src="assets/img/gambar3.jpeg" alt="Kenangan Manis Kita" loading="eager" />
+            <span>My Favorite Smile ✨</span>
+          </div>
+          <div class="photo-card photo-center">
+            <div class="crown-badge">👑 Birthday Girl</div>
+            <img src="assets/img/gambar1.jpeg" alt="Wanita Terindah" loading="eager" />
+            <span>10 • 11 • 2026 ❤️</span>
+          </div>
+          <div class="photo-card photo-right">
+            <img src="assets/img/gambar4.jpeg" alt="Momen Bahagia" loading="eager" />
+            <span>Forever & Always 🌷</span>
+          </div>
+        </div>
+
+        <!-- Countdown / Celebration Box -->
+        <div class="countdown-card">
+          <p class="countdown-title" id="countdown-heading">Menghitung Detik Menuju Hari Spesialmu (10 November 2026)</p>
+          <div class="countdown-grid" id="countdown-grid">
+            <div class="time-box">
+              <span class="time-val" id="cd-days">00</span>
+              <span class="time-label">Hari</span>
+            </div>
+            <div class="time-box">
+              <span class="time-val" id="cd-hours">00</span>
+              <span class="time-label">Jam</span>
+            </div>
+            <div class="time-box">
+              <span class="time-val" id="cd-minutes">00</span>
+              <span class="time-label">Menit</span>
+            </div>
+            <div class="time-box">
+              <span class="time-val" id="cd-seconds">00</span>
+              <span class="time-label">Detik</span>
+            </div>
+          </div>
+          <p class="countdown-sub" id="countdown-sub">
+            Setiap detik bersamamu adalah anugerah terindah yang pernah kumiliki.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#cake-section" class="btn-primary">🎂 Tiup Lilin Dulu Yuk</a>
+          <a href="#love-letter" class="btn-secondary">📜 Baca Surat Cintaku</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INTERACTIVE BIRTHDAY CAKE SECTION -->
+    <section class="section cake-section" id="cake-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Make A Wish • 10.11.2026</span>
+          <h2 class="section-title">Kue Ulang Tahun Spesial Untukmu 🎂</h2>
+          <p class="section-subtitle">
+            Pejamkan matamu sebentar, ucapkan doa dan harapan terbaikmu di dalam hati, lalu tiup lilinnya ya sayang!
+          </p>
+        </div>
+
+        <div class="cake-stage">
+          <!-- Interactive CSS Cake -->
+          <div class="cake-wrapper" id="cake-wrapper">
+            <div class="candles-group" id="candles-group">
+              <div class="candle">
+                <div class="flame" id="flame-1"></div>
+                <div class="smoke" id="smoke-1"></div>
+                <div class="wick"></div>
+              </div>
+              <div class="candle candle-center">
+                <div class="flame" id="flame-2"></div>
+                <div class="smoke" id="smoke-2"></div>
+                <div class="wick"></div>
+              </div>
+              <div class="candle">
+                <div class="flame" id="flame-3"></div>
+                <div class="smoke" id="smoke-3"></div>
+                <div class="wick"></div>
+              </div>
+            </div>
+            <div class="cake-top-tier">
+              <div class="icing-drip"></div>
+              <span class="cake-date-text">10 Nov 2026</span>
+            </div>
+            <div class="cake-bottom-tier">
+              <div class="icing-drip-bottom"></div>
+              <div class="cake-hearts">❤️ &nbsp; ❤️ &nbsp; ❤️</div>
+            </div>
+            <div class="cake-plate"></div>
+          </div>
+
+          <div class="cake-controls">
+            <button id="blow-candle-btn" class="btn-primary">
+              🌬️ Buat Harapan & Tiup Lilinnya!
+            </button>
+            <button id="relight-candle-btn" class="btn-secondary hidden">
+              🔥 Nyalakan Lagi Lilinnya
+            </button>
+          </div>
+
+          <!-- Hidden Wish Message revealed after blowing candle -->
+          <div id="wish-revealed" class="wish-revealed hidden">
+            <div class="wish-card">
+              <h3>🎉 Yeay! Selamat Ulang Tahun Bunga Safitriani! 🎉</h3>
+              <p>
+                "Semoga semua doa yang baru saja kamu langitkan diaminkan oleh semesta satu per satu.
+                Dan semoga di setiap doa bahagiamu, selalu ada aku yang menemani langkahmu.
+                I love you more than words can ever say, Bunga sayang!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. POLAROID GALLERY SECTION (ALL 9 PHOTOS) -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Our Precious Memories</span>
+          <h2 class="section-title">Galeri Kenangan & Senyum Manismu 📸</h2>
+          <p class="section-subtitle">
+            Dari sekian banyak hal indah di dunia ini, senyummu di setiap foto ini tetap jadi pemandangan favoritku. Klik fotonya untuk melihat pesan rahasia di baliknya!
+          </p>
+        </div>
+
+        <div class="polaroid-grid" id="polaroid-grid">
+          <!-- Populated dynamically via script.js using gambar1.jpeg - gambar9.jpeg -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DEEP ROMANTIC LOVE LETTER -->
+    <section class="section letter-section" id="love-letter">
+      <div class="container">
+        <div class="letter-paper">
+          <div class="letter-corner top-left">❀</div>
+          <div class="letter-corner top-right">❀</div>
+          <div class="letter-corner bottom-left">❀</div>
+          <div class="letter-corner bottom-right">❀</div>
+
+          <div class="letter-header">
+            <span class="letter-date">10 November 2026</span>
+            <h2 class="letter-greeting">Untuk Bunga Safitriani, Wanita yang Paling Aku Cintai,</h2>
+          </div>
+
+          <div class="letter-body">
+            <p>
+              Hai sayangku <strong>Bunga Safitriani</strong>, selamat ulang tahun ya. Rasanya baru kemarin aku mengagumi senyummu untuk pertama kalinya, dan hari ini aku kembali diberi kesempatan untuk merayakan hari paling bersejarah: hari di mana bidadari secantik dan sebaik kamu dilahirkan ke dunia.
+            </p>
+            <p>
+              Sesuai dengan namamu, <strong>Bunga</strong>, kehadiranmu benar-benar membuat hidupku yang tadinya biasa saja menjadi taman yang penuh warna dan keindahan. Kalau orang-orang bertanya apa hal terbaik yang pernah terjadi di dalam hidupku, tanpa ragu sedikit pun aku akan menjawab: <strong>bertemu dan jatuh cinta sama kamu, Bunga Safitriani</strong>. Terima kasih sudah menjadi rumah paling hangat tempatku pulang, dan terima kasih sudah sabar menghadapi segala kurang dan lebihku.
+            </p>
+            <p>
+              Di tanggal <strong>10 November 2026</strong> ini, di usiamu yang baru, aku berdoa semoga langkahmu selalu dimudahkan, hatimu selalu dilapangkan, dan senyum manismu tidak pernah luntur. Jangan pernah merasa sendirian ya, sayang. Saat dunia terasa berat, ingatlah ada aku di sini yang akan selalu menggenggam tanganmu, mendengarkan keluh kesahmu, dan memelukmu paling erat.
+            </p>
+            <p>
+              Aku mungkin bukan orang yang paling puitis di dunia, tapi satu hal yang pasti: <em>aku bucin banget sama kamu, hari ini, besok, dan selamanya</em>. Tetaplah mekar dengan indah dan jadi wanita hebat yang selalu bikin aku jatuh cinta berkali-kali pada orang yang sama.
+            </p>
+            <p class="letter-highlight">
+              "Selamat bertambah usia, Bunga Safitriani cintaku. Mari kita menua bersama dan merayakan puluhan tanggal 10 November lainnya di masa depan."
+            </p>
+          </div>
+
+          <div class="letter-footer">
+            <p>Dengan seluruh cinta dan kasih sayang,</p>
+            <p class="letter-signature" id="letter-sender">Pacarmu yang Paling Bucin ❤️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. JAR OF BUCIN NOTES (INTERACTIVE) -->
+    <section class="section notes-section" id="bucin-notes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">1001 Reasons Why I Love You</span>
+          <h2 class="section-title">Kapsul Kata-Kata Bucin Buat Kamu 💌</h2>
+          <p class="section-subtitle">
+            Kapanpun kamu lagi badmood, kangen, atau butuh validasi seberapa sayangnya aku sama kamu, klik tombol di bawah ya!
+          </p>
+        </div>
+
+        <div class="bucin-jar-card">
+          <div class="note-counter" id="note-counter">Pesan Cinta #1 dari 10</div>
+          <blockquote class="bucin-quote" id="bucin-quote">
+            "Di dunia ini ada jutaan jenis bunga di taman, tapi cuma satu Bunga yang berhasil tumbuh dan mekar selamanya di hatiku: Bunga Safitriani ❤️"
+          </blockquote>
+          <div class="bucin-actions">
+            <button id="prev-note-btn" class="btn-secondary">← Sebelumnya</button>
+            <button id="next-note-btn" class="btn-primary">Ambil Surat Bucin Lainnya 💝</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. INTERACTIVE "DO YOU LOVE ME?" MINI GAME -->
+    <section class="section question-section" id="question-game">
+      <div class="container">
+        <div class="question-card" id="question-card">
+          <span class="question-badge">Pertanyaan Penting Buat Bunga Safitriani 🥺</span>
+          <h2 class="question-title">Bunga sayang, kamu mau gak terus sama aku, merayakan ulang tahun bareng sampai kita tua nanti?</h2>
+          <p class="question-sub">Jawab dengan jujur dari lubuk hati paling dalam ya sayang...</p>
+
+          <div class="question-buttons" id="question-buttons">
+            <button id="yes-love-btn" class="btn-primary yes-btn">
+              Mau Banget Sayang! Selamanya! ❤️
+            </button>
+            <button id="no-love-btn" class="btn-secondary no-btn">
+              Pikir-pikir dulu 😜
+            </button>
+          </div>
+
+          <div id="yes-response" class="yes-response hidden">
+            <div class="yes-response-inner">
+              <span class="big-heart">💖💍💖</span>
+              <h3>Aaaa Makasih Bunga Sayangku!! 🥰</h3>
+              <p>
+                Janji ya kita bakal terus sama-sama lewatin suka dan duka bareng!
+                Sekali lagi, <strong>Selamat Ulang Tahun Bunga Safitriani (10 November 2026)</strong> belahan jiwaku.
+                I love you to the moon and never back! 🌙✨
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-heart">Dibuat dengan sepenuh hati & rasa bucin paling dalam khusus untuk Bunga Safitriani ❤️</p>
+        <p class="footer-date">Spesial Ulang Tahunmu • 10 November 2026</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- LIGHTBOX MODAL FOR PHOTOS -->
+  <div id="lightbox-modal" class="lightbox-modal hidden" role="dialog" aria-modal="true">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Tutup">&times;</button>
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="Foto Kenangan Kita" />
+      </div>
+      <div class="lightbox-caption-box">
+        <span id="lightbox-tag" class="lightbox-tag">Kenangan Indah</span>
+        <h3 id="lightbox-title" class="lightbox-title">Senyum Favoritku</h3>
+        <p id="lightbox-desc" class="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
